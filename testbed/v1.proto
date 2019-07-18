@@ -1,0 +1,27 @@
+syntax = "proto3";
+option java_multiple_files = true;
+package de.hhu.codecamp.testbed.api;
+
+enum TestStatus {
+    SUCCESSFUL = 0;
+    FAILED = 1;
+}
+
+message TestResult {
+    TestStatus status = 1;
+    string output = 2;
+}
+
+message ExecutionRequest {
+    string implementation = 1;
+    string test = 2;
+}
+
+message ExecutionResponse {
+    map<string, TestResult> results = 1;
+    string output = 2;
+}
+
+service TestbedService {
+    rpc execute(ExecutionRequest) returns (ExecutionResponse);
+}
