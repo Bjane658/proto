@@ -2,8 +2,6 @@ syntax = "proto3";
 
 package de.hhu.codecamp.authenticator.api;
 
-import "google/protobuf/empty.proto";
-
 option java_multiple_files = true;
 
 service AuthenticatorService {
