@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package de.hhu.codecamp.catalogue.api;
+package codecamp.catalogue.api;
 
 import "google/protobuf/empty.proto";
 import "codecamp/protobuf/sourcefile.proto";
