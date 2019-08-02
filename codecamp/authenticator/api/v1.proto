@@ -2,11 +2,18 @@ syntax = "proto3";
 
 package codecamp.authenticator.api;
 
+import "google/api/annotations.proto";
+
 option java_package = "de.hhu.codecamp.authenticator.api";
 option java_multiple_files = true;
 
 service AuthenticatorService {
-    rpc authenticate(AuthenticationRequest) returns (AuthenticationResponse);
+    rpc authenticate(AuthenticationRequest) returns (AuthenticationResponse) {
+		option (google.api.http) = {
+			post: "/v1/authenticate"
+			body: "*"
+		};
+	}
 }
 
 message AuthenticationRequest {
