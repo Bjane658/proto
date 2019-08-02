@@ -3,15 +3,16 @@ syntax = "proto3";
 package codecamp.catalogue.api;
 
 import "google/protobuf/empty.proto";
-import "codecamp/protobuf/sourcefile.proto";
+import "codecamp/protobuf/source_file.proto";
+import "codecamp/protobuf/challenge.proto";
 
 option java_package = "de.hhu.codecamp.catalogue.api";
 option java_multiple_files = true;
 
 service CatalogueService {
-    rpc findById(FindRequest) returns (Challenge);
-    rpc list(ListRequest) returns (stream Challenge);
-    rpc put(Challenge) returns (google.protobuf.Empty);
+    rpc findById(FindRequest) returns (codecamp.protobuf.Challenge);
+    rpc list(ListRequest) returns (stream codecamp.protobuf.Challenge);
+    rpc put(codecamp.protobuf.Challenge) returns (google.protobuf.Empty);
 }
 
 message FindRequest {
@@ -21,12 +22,4 @@ message FindRequest {
 message ListRequest {
     int32 page = 1;
     int32 items_per_page = 2;
-}
-
-message Challenge {
-    int32 id = 1;
-    string title = 2;
-    string description = 3;
-    codecamp.protobuf.SourceFile skeleton = 4;
-    codecamp.protobuf.SourceFile test = 5;
 }

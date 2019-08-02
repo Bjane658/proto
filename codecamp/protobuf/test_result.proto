@@ -1,0 +1,12 @@
+syntax = "proto3";
+package codecamp.protobuf;
+
+import "codecamp/protobuf/status.proto";
+
+option java_package = "de.hhu.codecamp.protobuf";
+option java_multiple_files = true;
+
+message TestResult {
+    codecamp.protobuf.Status status = 1;
+    string description = 2;
+}
