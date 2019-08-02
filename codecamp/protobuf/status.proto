@@ -1,5 +1,5 @@
 syntax = "proto3";
-package de.hhu.codecamp.proto
+package de.hhu.codecamp.proto;
 
 enum Status {
     UNKOWN = 0;

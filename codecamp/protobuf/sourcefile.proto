@@ -1,5 +1,5 @@
 syntax = "proto3";
-package de.hhu.codecamp.proto
+package de.hhu.codecamp.proto;
 
 message SourceFile {
     string class_name = 1;
