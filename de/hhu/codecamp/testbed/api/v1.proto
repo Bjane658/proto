@@ -1,8 +1,8 @@
 syntax = "proto3";
 package de.hhu.codecamp.testbed.api;
 
-import "codecamp/protobuf/sourcefile.proto";
-import "codecamp/protobuf/status.proto";
+import "de/hhu/codecamp/protobuf/sourcefile.proto";
+import "de/hhu/codecamp/protobuf/status.proto";
 
 option java_multiple_files = true;
 
