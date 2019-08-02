@@ -1,6 +1,7 @@
 syntax = "proto3";
-package de.hhu.codecamp.protobuf;
+package codecamp.protobuf;
 
+option java_package = "de.hhu.codecamp.protobuf";
 option java_multiple_files = true;
 
 enum Status {

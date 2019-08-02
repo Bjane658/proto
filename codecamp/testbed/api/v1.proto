@@ -1,9 +1,10 @@
 syntax = "proto3";
-package de.hhu.codecamp.testbed.api;
+package codecamp.testbed.api;
 
-import "de/hhu/codecamp/protobuf/sourcefile.proto";
-import "de/hhu/codecamp/protobuf/status.proto";
+import "codecamp/protobuf/sourcefile.proto";
+import "codecamp/protobuf/status.proto";
 
+option java_package = "de.hhu.codecamp.testbed.api";
 option java_multiple_files = true;
 
 service TestbedService {
@@ -11,13 +12,13 @@ service TestbedService {
 }
 
 message ExecutionRequest {
-    repeated SourceFile sources = 1;
+    repeated codecamp.protobuf.SourceFile sources = 1;
 }
 
 message ExecutionResponse {
     map<string,TestResult> results = 1;
     repeated Diagnostic diagnostics = 2;
-    Status status = 3;
+    codecamp.protobuf.Status status = 3;
 }
 
 message Diagnostic {
@@ -28,6 +29,6 @@ message Diagnostic {
 }
 
 message TestResult {
-    Status status = 1;
+    codecamp.protobuf.Status status = 1;
     string description = 2;
 }

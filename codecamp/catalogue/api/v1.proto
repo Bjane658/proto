@@ -3,8 +3,9 @@ syntax = "proto3";
 package de.hhu.codecamp.catalogue.api;
 
 import "google/protobuf/empty.proto";
-import "de/hhu/codecamp/protobuf/sourcefile.proto";
+import "codecamp/protobuf/sourcefile.proto";
 
+option java_package = "de.hhu.codecamp.catalogue.api";
 option java_multiple_files = true;
 
 service CatalogueService {
@@ -26,6 +27,6 @@ message Challenge {
     int32 id = 1;
     string title = 2;
     string description = 3;
-    SourceFile skeleton = 4;
-    SourceFile test = 5;
+    codecamp.protobuf.SourceFile skeleton = 4;
+    codecamp.protobuf.SourceFile test = 5;
 }
