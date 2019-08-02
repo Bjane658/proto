@@ -1,0 +1,8 @@
+syntax = "proto3";
+package de.hhu.codecamp.proto
+
+enum Status {
+    UNKOWN = 0;
+    SUCCESSFUL = 1;
+    FAILED = 2;
+}
