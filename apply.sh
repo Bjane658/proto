@@ -12,7 +12,8 @@ docker run --rm \
                              --include_imports \
                              --include_source_info \
                              --descriptor_set_out=/out/proto.pb \
-                             /workspace/proto/codecamp/authenticator/api/v1.proto"
+                             /workspace/proto/codecamp/authenticator/api/v1.proto \
+                             /workspace/proto/codecamp/catalogue/api/v1.proto"
                         
 kubectl create configmap proto-descriptor --namespace codecamp --from-file "${DIR}/proto.pb" -o yaml --dry-run | kubectl apply -f -
 rm proto.pb
