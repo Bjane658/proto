@@ -12,4 +12,5 @@ message Challenge {
     string description = 3;
     codecamp.protobuf.SourceFile skeleton = 4;
     codecamp.protobuf.SourceFile test = 5;
+    map<string,int32> rewards = 6;
 }
