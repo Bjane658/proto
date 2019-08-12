@@ -7,6 +7,7 @@ import "google/api/annotations.proto";
 import "codecamp/protobuf/source_file.proto";
 import "codecamp/protobuf/test_result.proto";
 import "codecamp/protobuf/compiler_diagnostic.proto";
+import "codecamp/protobuf/status.proto";
 
 option java_package = "de.hhu.codecamp.submission.api";
 option java_multiple_files = true;
