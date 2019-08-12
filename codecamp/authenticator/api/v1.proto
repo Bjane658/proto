@@ -17,7 +17,7 @@ service AuthenticatorService {
 		};
 	}
 
-	rpc getCertificates(google.protobuf.Empty) returns (stream codecamp.protobuf.JsonWebKey) {
+	rpc getCertificates(google.protobuf.Empty) returns (CertificatesResponse) {
 		option (google.api.http) = {
 			get: "/v1/certs"
 		};
@@ -31,4 +31,8 @@ message AuthenticationRequest {
 
 message AuthenticationResponse {
 	string token = 1;
+}
+
+message CertificatesResponse {
+	repeated codecamp.protobuf.JsonWebKey keys = 1;
 }
