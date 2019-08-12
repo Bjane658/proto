@@ -1,0 +1,13 @@
+syntax = "proto3";
+package codecamp.protobuf;
+
+option java_package = "de.hhu.codecamp.protobuf";
+option java_multiple_files = true;
+
+message JsonWebKey {
+    string alg = 1;
+    string kty = 2;
+    string use = 3;
+    string n = 4;
+    string e = 5;
+}

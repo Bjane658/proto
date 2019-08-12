@@ -3,6 +3,8 @@ syntax = "proto3";
 package codecamp.authenticator.api;
 
 import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "codecamp/protobuf/json_web_key.proto";
 
 option java_package = "de.hhu.codecamp.authenticator.api";
 option java_multiple_files = true;
@@ -12,6 +14,12 @@ service AuthenticatorService {
 		option (google.api.http) = {
 			post: "/v1/authenticate"
 			body: "*"
+		};
+	}
+
+	rpc getCertificates(google.protobuf.Empty) returns (stream codecamp.protobuf.JsonWebKey) {
+		option (google.api.http) = {
+			get: "/v1/certs"
 		};
 	}
 }
