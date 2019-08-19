@@ -18,7 +18,7 @@ message ExecutionRequest {
 }
 
 message ExecutionResponse {
-    map<string, codecamp.protobuf.TestResult> results = 1;
-    repeated codecamp.protobuf.CompilerDiagnostic diagnostics = 2;
-    codecamp.protobuf.Status status = 3;
+    codecamp.protobuf.Status status = 1;
+    repeated codecamp.protobuf.TestResult results = 2;
+    repeated codecamp.protobuf.CompilerDiagnostic diagnostics = 3;
 }

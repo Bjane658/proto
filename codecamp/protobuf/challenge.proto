@@ -2,6 +2,7 @@ syntax = "proto3";
 package codecamp.protobuf;
 
 import "codecamp/protobuf/source_file.proto";
+import "codecamp/protobuf/reward.proto";
 
 option java_package = "de.hhu.codecamp.protobuf";
 option java_multiple_files = true;
@@ -12,5 +13,5 @@ message Challenge {
     string description = 3;
     codecamp.protobuf.SourceFile skeleton = 4;
     codecamp.protobuf.SourceFile test = 5;
-    map<string,int32> rewards = 6;
+    repeated codecamp.protobuf.Reward rewards = 6;
 }

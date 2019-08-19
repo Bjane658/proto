@@ -15,7 +15,7 @@ option java_multiple_files = true;
 service SubmissionService {
     rpc submit(SubmissionRequest) returns (SubmissionResponse) {
 		option (google.api.http) = {
-			put: "/v1/submit"
+			post: "/v1/submit"
 			body: "*"
 		};
 	}
@@ -28,6 +28,6 @@ message SubmissionRequest {
 
 message SubmissionResponse {
     codecamp.protobuf.Status status = 1;
-    map<string, codecamp.protobuf.TestResult> results = 2;
+    repeated codecamp.protobuf.TestResult results = 2;
     repeated codecamp.protobuf.CompilerDiagnostic diagnostics = 3;
 }
