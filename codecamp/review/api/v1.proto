@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+package codecamp.review.api;
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "codecamp/protobuf/review.proto";
+
+option java_package = "de.hhu.codecamp.review.api";
+option java_multiple_files = true;
+
+service ReviewService {
+    rpc FindById(FindByIdRequest) returns (codecamp.protobuf.Review) {
+        option (google.api.http) = {
+			post: "/v1/find/by-id"
+			body: "*"
+		};
+    }
+
+    rpc FindByReviewer(FindByReviewerRequest) returns (stream codecamp.protobuf.Review) {
+        option (google.api.http) = {
+			post: "/v1/find/by-reviewer"
+			body: "*"
+		};
+    }
+
+    rpc FindByStudent(FindByStudentRequest) returns (stream codecamp.protobuf.Review) {
+        option (google.api.http) = {
+			post: "/v1/find/by-student"
+			body: "*"
+		};
+    }
+
+    rpc Put (stream codecamp.protobuf.Review) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+			post: "/v1/put"
+			body: "*"
+		};
+    }
+}
+
+message FindByIdRequest {
+    int64 challenge_id = 1;
+    string student_id = 2;
+}
+
+message FindByReviewerRequest {
+    string reviewer_id = 1;
+}
+
+message FindByStudentRequest {
+    string student_id = 1;
+}

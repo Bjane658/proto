@@ -10,19 +10,19 @@ option java_package = "de.hhu.codecamp.catalogue.api";
 option java_multiple_files = true;
 
 service CatalogueService {
-    rpc findById(FindRequest) returns (codecamp.protobuf.Challenge) {
+    rpc FindById (FindRequest) returns (codecamp.protobuf.Challenge) {
 		option (google.api.http) = {
 			get: "/v1/challenges/{id}"
 		};
 	}
 	
-    rpc list(ListRequest) returns (stream codecamp.protobuf.Challenge) {
+    rpc List (ListRequest) returns (stream codecamp.protobuf.Challenge) {
 		option (google.api.http) = {
 			get: "/v1/challenges"
 		};
 	}
 	
-    rpc put(codecamp.protobuf.Challenge) returns (google.protobuf.Empty) {
+    rpc Put (codecamp.protobuf.Challenge) returns (google.protobuf.Empty) {
 		option (google.api.http) = {
 			post: "/v1/challenges"
 			body: "*"

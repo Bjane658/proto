@@ -13,12 +13,12 @@ option java_package = "de.hhu.codecamp.submission.api";
 option java_multiple_files = true;
 
 service SubmissionService {
-    rpc submit(SubmissionRequest) returns (SubmissionResponse) {
+    rpc Submit (SubmissionRequest) returns (SubmissionResponse) {
 		option (google.api.http) = {
 			post: "/v1/submit"
 			body: "*"
 		};
-	}
+    }
 }
 
 message SubmissionRequest {
