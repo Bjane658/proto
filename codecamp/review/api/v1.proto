@@ -12,22 +12,19 @@ option java_multiple_files = true;
 service ReviewService {
     rpc FindById(FindByIdRequest) returns (codecamp.protobuf.Review) {
         option (google.api.http) = {
-			post: "/v1/find/by-id"
-			body: "*"
+			get: "/v1/find/by-id"
 		};
     }
 
     rpc FindByReviewer(FindByReviewerRequest) returns (stream codecamp.protobuf.Review) {
         option (google.api.http) = {
-			post: "/v1/find/by-reviewer"
-			body: "*"
+			get: "/v1/find/by-reviewer"
 		};
     }
 
     rpc FindByStudent(FindByStudentRequest) returns (stream codecamp.protobuf.Review) {
         option (google.api.http) = {
-			post: "/v1/find/by-student"
-			body: "*"
+			get: "/v1/find/by-student"
 		};
     }
 
@@ -40,14 +37,14 @@ service ReviewService {
 }
 
 message FindByIdRequest {
-    int64 challenge_id = 1;
-    string student_id = 2;
+    int64 challenge = 1;
+    string student = 2;
 }
 
 message FindByReviewerRequest {
-    string reviewer_id = 1;
+    string reviewer = 1;
 }
 
 message FindByStudentRequest {
-    string student_id = 1;
+    string student = 1;
 }
