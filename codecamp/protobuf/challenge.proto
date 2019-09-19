@@ -8,7 +8,7 @@ option java_package = "de.hhu.codecamp.protobuf";
 option java_multiple_files = true;
 
 message Challenge {
-    int32 id = 1;
+    string id = 1;
     string title = 2;
     string description = 3;
     string thumbnail = 4;

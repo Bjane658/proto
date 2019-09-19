@@ -7,7 +7,7 @@ option java_package = "de.hhu.codecamp.protobuf";
 option java_multiple_files = true;
 
 message Review {
-    int64 challenge_id = 1;
+    string challenge_id = 1;
     codecamp.protobuf.User student = 2;
     codecamp.protobuf.User reviewer = 3;
     int64 deadline = 4;
