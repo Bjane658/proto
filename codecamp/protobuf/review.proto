@@ -10,7 +10,7 @@ message Review {
     string challenge_id = 1;
     codecamp.protobuf.User student = 2;
     codecamp.protobuf.User reviewer = 3;
-    int64 deadline = 4;
+    string deadline = 4;
     string content = 5;
     bool points_revoked = 6;
 }

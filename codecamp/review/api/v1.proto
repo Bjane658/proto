@@ -37,7 +37,7 @@ service ReviewService {
 }
 
 message FindByIdRequest {
-    int64 challenge = 1;
+    string challenge = 1;
     string student = 2;
 }
 

@@ -22,7 +22,7 @@ service SubmissionService {
 }
 
 message SubmissionRequest {
-    int32 challenge_id = 1;
+    string challenge_id = 1;
     codecamp.protobuf.SourceFile implementation = 2;
 }
 
