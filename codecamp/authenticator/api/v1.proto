@@ -40,7 +40,7 @@ service AuthenticatorService {
 	rpc UpdateUserRole (RoleUpdateRequest) returns (google.protobuf.Empty) {
 		option (google.api.http) = {
 			put: "/v1/users/{username}/role"
-			body: "role"
+			body: "*"
 		};
 	}
 }
