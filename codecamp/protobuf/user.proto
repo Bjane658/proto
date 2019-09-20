@@ -10,4 +10,5 @@ message User {
     string firstname = 3;
     string lastname = 4;
     string email = 5;
+    string role = 6;
 }

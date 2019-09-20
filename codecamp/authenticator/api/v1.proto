@@ -30,6 +30,19 @@ service AuthenticatorService {
 			get: "/v1/certs"
 		};
 	}
+
+	rpc ListUsers (ListRequest) returns (stream codecamp.protobuf.User) {
+		option (google.api.http) = {
+			get: "/v1/users"
+		};
+	}
+
+	rpc UpdateUserRole (RoleUpdateRequest) returns (google.protobuf.Empty) {
+		option (google.api.http) = {
+			put: "/v1/users/{username}/role"
+			body: "role"
+		};
+	}
 }
 
 message ResolveRequest {
@@ -39,6 +52,16 @@ message ResolveRequest {
 message AuthenticationRequest {
 	string username = 1;
 	string password = 2;
+}
+
+message RoleUpdateRequest {
+	string username = 1;
+	string role = 2;
+}
+
+message ListRequest {
+	int32 page = 1;
+	int32 page_size = 2;
 }
 
 message AuthenticationResponse {
