@@ -13,8 +13,6 @@ option java_package = "de.hhu.educode.submission.api";
 option java_multiple_files = true;
 
 service SubmissionService {
-    rpc Get (SubmissionGetRequest) returns (Submission)
-
     rpc Submit (SubmissionRequest) returns (SubmissionResponse) {
 		option (google.api.http) = {
 			post: "/v1/submit"
