@@ -1,13 +1,13 @@
 syntax = "proto3";
 
-package codecamp.authenticator.api;
+package educode.authenticator.api;
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
-import "codecamp/protobuf/json_web_key.proto";
-import "codecamp/protobuf/user.proto";
+import "educode/protobuf/json_web_key.proto";
+import "educode/protobuf/user.proto";
 
-option java_package = "de.hhu.codecamp.authenticator.api";
+option java_package = "de.hhu.educode.authenticator.api";
 option java_multiple_files = true;
 
 service AuthenticatorService {
@@ -18,7 +18,7 @@ service AuthenticatorService {
 		};
 	}
 
-	rpc ResolveUser (stream ResolveRequest) returns (stream codecamp.protobuf.User) {
+	rpc ResolveUser (stream ResolveRequest) returns (stream educode.protobuf.User) {
 		option (google.api.http) = {
 			post: "/v1/resolve"
 			body: "*"
@@ -31,7 +31,7 @@ service AuthenticatorService {
 		};
 	}
 
-	rpc ListUsers (ListRequest) returns (stream codecamp.protobuf.User) {
+	rpc ListUsers (ListRequest) returns (stream educode.protobuf.User) {
 		option (google.api.http) = {
 			get: "/v1/users"
 		};
@@ -69,5 +69,5 @@ message AuthenticationResponse {
 }
 
 message CertificatesResponse {
-	repeated codecamp.protobuf.JsonWebKey keys = 1;
+	repeated educode.protobuf.JsonWebKey keys = 1;
 }

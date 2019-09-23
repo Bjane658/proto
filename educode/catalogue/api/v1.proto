@@ -1,28 +1,28 @@
 syntax = "proto3";
 
-package codecamp.catalogue.api;
+package educode.catalogue.api;
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
-import "codecamp/protobuf/challenge.proto";
+import "educode/protobuf/challenge.proto";
 
-option java_package = "de.hhu.codecamp.catalogue.api";
+option java_package = "de.hhu.educode.catalogue.api";
 option java_multiple_files = true;
 
 service CatalogueService {
-    rpc FindById (FindRequest) returns (codecamp.protobuf.Challenge) {
+    rpc FindById (FindRequest) returns (educode.protobuf.Challenge) {
 		option (google.api.http) = {
 			get: "/v1/challenges/{id}"
 		};
 	}
 	
-    rpc List (ListRequest) returns (stream codecamp.protobuf.Challenge) {
+    rpc List (ListRequest) returns (stream educode.protobuf.Challenge) {
 		option (google.api.http) = {
 			get: "/v1/challenges"
 		};
 	}
 	
-    rpc Put (codecamp.protobuf.Challenge) returns (google.protobuf.Empty) {
+    rpc Put (educode.protobuf.Challenge) returns (google.protobuf.Empty) {
 		option (google.api.http) = {
 			post: "/v1/challenges"
 			body: "*"

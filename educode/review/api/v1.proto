@@ -1,34 +1,34 @@
 syntax = "proto3";
 
-package codecamp.review.api;
+package educode.review.api;
 
 import "google/api/annotations.proto";
 import "google/protobuf/empty.proto";
-import "codecamp/protobuf/review.proto";
+import "educode/protobuf/review.proto";
 
-option java_package = "de.hhu.codecamp.review.api";
+option java_package = "de.hhu.educode.review.api";
 option java_multiple_files = true;
 
 service ReviewService {
-    rpc FindById(FindByIdRequest) returns (codecamp.protobuf.Review) {
+    rpc FindById(FindByIdRequest) returns (educode.protobuf.Review) {
         option (google.api.http) = {
 			get: "/v1/find/by-id"
 		};
     }
 
-    rpc FindByReviewer(FindByReviewerRequest) returns (stream codecamp.protobuf.Review) {
+    rpc FindByReviewer(FindByReviewerRequest) returns (stream educode.protobuf.Review) {
         option (google.api.http) = {
 			get: "/v1/find/by-reviewer"
 		};
     }
 
-    rpc FindByStudent(FindByStudentRequest) returns (stream codecamp.protobuf.Review) {
+    rpc FindByStudent(FindByStudentRequest) returns (stream educode.protobuf.Review) {
         option (google.api.http) = {
 			get: "/v1/find/by-student"
 		};
     }
 
-    rpc Put (stream codecamp.protobuf.Review) returns (google.protobuf.Empty) {
+    rpc Put (stream educode.protobuf.Review) returns (google.protobuf.Empty) {
         option (google.api.http) = {
 			post: "/v1/put"
 			body: "*"

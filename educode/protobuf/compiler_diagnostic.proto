@@ -1,7 +1,7 @@
 syntax = "proto3";
-package codecamp.protobuf;
+package educode.protobuf;
 
-option java_package = "de.hhu.codecamp.protobuf";
+option java_package = "de.hhu.educode.protobuf";
 option java_multiple_files = true;
 
 message CompilerDiagnostic {

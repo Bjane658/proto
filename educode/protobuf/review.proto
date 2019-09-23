@@ -1,0 +1,16 @@
+syntax = "proto3";
+package educode.protobuf;
+
+import "educode/protobuf/user.proto";
+
+option java_package = "de.hhu.educode.protobuf";
+option java_multiple_files = true;
+
+message Review {
+    string challenge_id = 1;
+    educode.protobuf.User student = 2;
+    educode.protobuf.User reviewer = 3;
+    string deadline = 4;
+    string content = 5;
+    bool points_revoked = 6;
+}

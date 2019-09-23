@@ -1,0 +1,24 @@
+syntax = "proto3";
+package educode.testbed.api;
+
+import "educode/protobuf/compiler_diagnostic.proto";
+import "educode/protobuf/source_file.proto";
+import "educode/protobuf/test_result.proto";
+import "educode/protobuf/status.proto";
+
+option java_package = "de.hhu.educode.testbed.api";
+option java_multiple_files = true;
+
+service TestbedService {
+    rpc Execute (ExecutionRequest) returns (ExecutionResponse);
+}
+
+message ExecutionRequest {
+    repeated educode.protobuf.SourceFile sources = 1;
+}
+
+message ExecutionResponse {
+    educode.protobuf.Status status = 1;
+    repeated educode.protobuf.TestResult results = 2;
+    repeated educode.protobuf.CompilerDiagnostic diagnostics = 3;
+}
