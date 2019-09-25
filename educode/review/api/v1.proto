@@ -10,41 +10,28 @@ option java_package = "de.hhu.educode.review.api";
 option java_multiple_files = true;
 
 service ReviewService {
-    rpc FindById(FindByIdRequest) returns (educode.protobuf.Review) {
+    rpc Get (GetRequest) returns (stream educode.protobuf.Review) {
         option (google.api.http) = {
-			get: "/v1/find/by-id"
+			get: "/v1/reviews"
 		};
     }
 
-    rpc FindByReviewer(FindByReviewerRequest) returns (stream educode.protobuf.Review) {
+    rpc Update (educode.protobuf.Review) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-			get: "/v1/find/by-reviewer"
+			put: "/v1/reviews"
+			body: "*"
 		};
     }
 
-    rpc FindByStudent(FindByStudentRequest) returns (stream educode.protobuf.Review) {
+    rpc Create (stream educode.protobuf.Review) returns (google.protobuf.Empty) {
         option (google.api.http) = {
-			get: "/v1/find/by-student"
-		};
-    }
-
-    rpc Put (stream educode.protobuf.Review) returns (google.protobuf.Empty) {
-        option (google.api.http) = {
-			post: "/v1/put"
+			post: "/v1/reviews"
 			body: "*"
 		};
     }
 }
 
-message FindByIdRequest {
+message GetRequest {
     string challenge = 1;
     string student = 2;
-}
-
-message FindByReviewerRequest {
-    string reviewer = 1;
-}
-
-message FindByStudentRequest {
-    string student = 1;
 }
