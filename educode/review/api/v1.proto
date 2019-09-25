@@ -34,4 +34,5 @@ service ReviewService {
 message GetRequest {
     string challenge = 1;
     string student = 2;
+    string reviewer = 3;
 }
