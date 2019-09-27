@@ -8,17 +8,29 @@ import "educode/protobuf/source_file.proto";
 import "educode/protobuf/test_result.proto";
 import "educode/protobuf/compiler_diagnostic.proto";
 import "educode/protobuf/status.proto";
+import "educode/protobuf/submission.proto";
 
 option java_package = "de.hhu.educode.submission.api";
 option java_multiple_files = true;
 
 service SubmissionService {
+    rpc Get (SubmissionGetRequest) returns (stream educode.protobuf.Submission) {
+        option (google.api.http) = {
+			get: "/v1/submissions"
+		};
+    }
+
     rpc Submit (SubmissionRequest) returns (SubmissionResponse) {
 		option (google.api.http) = {
-			post: "/v1/submit"
+			post: "/v1/submissions"
 			body: "*"
 		};
     }
+}
+
+message SubmissionGetRequest {
+    string challenge = 1;
+    string user = 2;
 }
 
 message SubmissionRequest {
