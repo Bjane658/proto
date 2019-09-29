@@ -22,3 +22,7 @@ message ExecutionResponse {
     repeated educode.protobuf.TestResult results = 2;
     repeated educode.protobuf.CompilerDiagnostic diagnostics = 3;
 }
+
+message RunnerResponse {
+    repeated educode.protobuf.TestResult results = 1;
+}
