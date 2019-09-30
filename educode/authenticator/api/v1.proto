@@ -18,6 +18,13 @@ service AuthenticatorService {
 		};
 	}
 
+	rpc Register(RegistrationRequest) returns (AuthenticationResponse) {
+		option (google.api.http) = {
+			post: "/v1/register"
+			body: "*"
+		};
+	}
+
 	rpc ResolveUser (stream ResolveRequest) returns (stream educode.protobuf.User) {
 		option (google.api.http) = {
 			post: "/v1/resolve"
@@ -47,6 +54,10 @@ service AuthenticatorService {
 
 message ResolveRequest {
 	string username = 1;
+}
+
+message RegistrationRequest {
+	string password = 1;
 }
 
 message AuthenticationRequest {
