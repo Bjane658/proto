@@ -9,4 +9,5 @@ enum Status {
     SUCCESSFUL = 1;
     FAILED = 2;
     TIMEOUT = 3;
+    OUT_OF_MEMORY = 4;
 }
