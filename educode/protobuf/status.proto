@@ -8,4 +8,5 @@ enum Status {
     UNKNOWN = 0;
     SUCCESSFUL = 1;
     FAILED = 2;
+    TIMEOUT = 3;
 }

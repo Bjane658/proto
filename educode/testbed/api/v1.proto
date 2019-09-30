@@ -18,13 +18,15 @@ message ExecutionRequest {
 }
 
 message ExecutionResponse {
-    educode.protobuf.Status status = 1;
-    repeated educode.protobuf.TestResult results = 2;
-    repeated educode.protobuf.CompilerDiagnostic diagnostics = 3;
+    educode.protobuf.Status compiler_status = 1;
+    educode.protobuf.Status runner_status = 2;
+    repeated educode.protobuf.TestResult test_results = 3;
+    repeated educode.protobuf.CompilerDiagnostic compiler_diagnostics = 4;
 }
 
 message RunnerResponse {
-    repeated educode.protobuf.TestResult results = 1;
+    educode.protobuf.Status status = 1;
+    repeated educode.protobuf.TestResult results = 2;
 }
 
 message CompilerResponse {
