@@ -39,7 +39,8 @@ message SubmissionRequest {
 }
 
 message SubmissionResponse {
-    educode.protobuf.Status status = 1;
-    repeated educode.protobuf.TestResult results = 2;
-    repeated educode.protobuf.CompilerDiagnostic diagnostics = 3;
+    educode.protobuf.Status compiler_status = 1;
+    educode.protobuf.Status runner_status = 2;
+    repeated educode.protobuf.TestResult test_results = 3;
+    repeated educode.protobuf.CompilerDiagnostic compiler_diagnostics = 4;
 }
