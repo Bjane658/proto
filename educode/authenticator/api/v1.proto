@@ -18,9 +18,16 @@ service AuthenticatorService {
 		};
 	}
 
-	rpc Register(RegistrationRequest) returns (AuthenticationResponse) {
+	rpc Register (RegistrationRequest) returns (AuthenticationResponse) {
 		option (google.api.http) = {
 			post: "/v1/register"
+			body: "*"
+		};
+	}
+
+	rpc SyncWhitelist (SyncRequest) returns (google.protobuf.Empty) {
+		option (google.api.http) = {
+			put: "/v1/whitelist"
 			body: "*"
 		};
 	}
@@ -54,6 +61,10 @@ service AuthenticatorService {
 
 message ResolveRequest {
 	string username = 1;
+}
+
+message SyncRequest {
+	repeated string usernames = 1;
 }
 
 message RegistrationRequest {
