@@ -10,4 +10,5 @@ message TestResult {
     educode.protobuf.Status status = 1;
     string method_name = 2;
     string description = 3;
+    string stacktrace = 4;
 }

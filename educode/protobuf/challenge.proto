@@ -12,8 +12,9 @@ message Challenge {
     string title = 2;
     string description = 3;
     string thumbnail = 4;
-    string deadline = 5;
-    educode.protobuf.SourceFile skeleton = 6;
-    educode.protobuf.SourceFile test = 7;
-    repeated educode.protobuf.Reward rewards = 8;
+    string start_time = 5;
+    string end_time = 6;
+    educode.protobuf.SourceFile skeleton = 7;
+    educode.protobuf.SourceFile test = 8;
+    repeated educode.protobuf.Reward rewards = 9;
 }
