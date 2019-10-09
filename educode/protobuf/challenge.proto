@@ -17,4 +17,5 @@ message Challenge {
     educode.protobuf.SourceFile skeleton = 7;
     educode.protobuf.SourceFile test = 8;
     repeated educode.protobuf.Reward rewards = 9;
+    bool plag_check = 10;
 }
