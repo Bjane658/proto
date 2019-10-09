@@ -2,6 +2,7 @@ syntax = "proto3";
 package educode.protobuf;
 
 import "educode/protobuf/source_file.proto";
+import "educode/protobuf/test_result.proto";
 import "educode/protobuf/reward.proto";
 
 option java_package = "de.hhu.educode.protobuf";
@@ -12,4 +13,5 @@ message Submission {
     string user = 2;
     string implementation = 3;
     int32 points = 4;
+    repeated educode.protobuf.TestResult test_results = 5;
 }
