@@ -28,6 +28,19 @@ service CatalogueService {
 			body: "*"
 		};
 	}
+
+    rpc Whitelist (WhitelistEntry) returns (google.protobuf.Empty) {
+        option (google.api.http) = {
+			post: "/v1/whitelist"
+			body: "*"
+		};
+    }
+
+    rpc IsWhitelisted (WhitelistEntry) returns (WhitelistResponse) {
+        option (google.api.http) = {
+			get: "/v1/whitelist"
+		};
+    }
 }
 
 message FindRequest {
@@ -37,4 +50,15 @@ message FindRequest {
 message ListRequest {
     int32 page = 1;
     int32 items_per_page = 2;
+}
+
+message WhitelistResponse {
+    bool whitelisted = 1;
+}
+
+message WhitelistEntry {
+    string user = 1;
+    string challenge = 2;
+    string start_time = 3;
+    string end_time = 4;
 }

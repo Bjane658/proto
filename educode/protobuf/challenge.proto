@@ -18,4 +18,5 @@ message Challenge {
     educode.protobuf.SourceFile test = 8;
     repeated educode.protobuf.Reward rewards = 9;
     bool plag_check = 10;
+    bool locked = 11;
 }
