@@ -19,4 +19,5 @@ message Challenge {
     repeated educode.protobuf.Reward rewards = 9;
     bool plag_check = 10;
     bool locked = 11;
+    string unlock_deadline = 12;
 }
