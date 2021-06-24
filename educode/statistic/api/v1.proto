@@ -11,13 +11,13 @@ option java_multiple_files = true;
 
 service StatisticService {
 
-    rpc getDifficulty (DifficultyGetRequest) returns (Difficulty) {
+    rpc getDifficulty (DifficultyGetRequest) returns (educode.protobuf.Difficulty) {
         option (google.api.http) = {
                     get: "/v1/difficulty"
                 };
     }
 
-    rpc postDifficulty (Difficulty) returns (Difficulty) {
+    rpc postDifficulty (educode.protobuf.Difficulty) returns (educode.protobuf.Difficulty) {
         option (google.api.http) = {
                     post: "/v1/difficulty",
                     body: "*"
