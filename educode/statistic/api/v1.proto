@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+package educode.statistic.api;
+
+import "google/api/annotations.proto";
+import "educode/protobuf/difficulty.proto";
+
+option java_package = "de.hhu.educode.statistic.api";
+option java_multiple_files = true;
+
+
+service StatisticService {
+
+    rpc getDifficulty (DifficultyGetRequest) returns (Difficulty) {
+        option (google.api.http) = {
+                    get: "/v1/difficulty"
+                };
+    }
+
+    rpc postDifficulty (Difficulty) returns (Difficulty) {
+        option (google.api.http) = {
+                    post: "/v1/difficulty",
+                    body: "*"
+                };
+    }
+
+}
+
+message DifficultyGetRequest {
+    string challengeId = 1;
+    string user = 2;
+}
+
+message DifficultyPostRequest {
+    string challengeId = 1;
+    string difficulty = 2;
+}
+
