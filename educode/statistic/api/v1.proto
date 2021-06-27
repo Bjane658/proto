@@ -24,13 +24,13 @@ service StatisticService {
                 };
     }
 
-		rpc getSubmissionTimestamp (SubmissionTimestampGetRequest) return (educode.protobuf.SubmissionTimestamp) {
+		rpc getSubmissionTimestamp (SubmissionTimestampGetRequest) returns (educode.protobuf.SubmissionTimestamp) {
         option (google.api.http) = {
                     get: "/v1/submissions/timestamp"
                 };
 		}
 
-		rpc postSubmissionTimestamp (SubmissionTimestampPostRequest) return (educode.protobuf.SubmissionTimestamp) {
+		rpc postSubmissionTimestamp (SubmissionTimestampPostRequest) returns (educode.protobuf.SubmissionTimestamp) {
         option (google.api.http) = {
                     post: "/v1/submissions/timestamp",
                     body: "*"
