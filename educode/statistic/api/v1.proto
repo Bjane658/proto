@@ -24,6 +24,19 @@ service StatisticService {
                 };
     }
 
+		rpc getSubmissionTimestamp (SubmissionTimestampGetRequest) return (educode.protobuf.SubmissionTimestamp) {
+        option (google.api.http) = {
+                    get: "/v1/submissions/timestamp"
+                };
+		}
+
+		rpc postSubmissionTimestamp (SubmissionTimestampPostRequest) return (educode.protobuf.SubmissionTimestamp) {
+        option (google.api.http) = {
+                    post: "/v1/submissions/timestamp",
+                    body: "*"
+                };
+		}
+
 }
 
 message DifficultyGetRequest {
@@ -34,5 +47,14 @@ message DifficultyGetRequest {
 message DifficultyPostRequest {
     string challengeId = 1;
     string difficulty = 2;
+}
+
+message SubmissionTimestampGetRequest {
+		string challengeId = 1;
+		string user = 2;
+}
+
+message SubmissionTimestampPostRequest {
+string challengeId = 1;
 }
 
