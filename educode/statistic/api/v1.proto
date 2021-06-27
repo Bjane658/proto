@@ -4,6 +4,7 @@ package educode.statistic.api;
 
 import "google/api/annotations.proto";
 import "educode/protobuf/difficulty.proto";
+import "educode/protobuf/submission_timestamp.proto";
 
 option java_package = "de.hhu.educode.statistic.api";
 option java_multiple_files = true;
