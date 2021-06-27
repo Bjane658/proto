@@ -9,5 +9,5 @@ option java_multiple_files = true;
 message SubmissionTimeStamp {
     string challengeId = 1;
 		string user = 2;
-    Timestamp timestamp = 3;
+    int64 timestamp = 3;
 }
