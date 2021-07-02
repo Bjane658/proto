@@ -5,6 +5,7 @@ package educode.statistic.api;
 import "google/api/annotations.proto";
 import "educode/protobuf/difficulty.proto";
 import "educode/protobuf/submission_timestamp.proto";
+import "educode/protobuf/points_per_challenge.proto";
 
 option java_package = "de.hhu.educode.statistic.api";
 option java_multiple_files = true;
@@ -38,6 +39,12 @@ service StatisticService {
                 };
 		}
 
+		rpc getPointsPerChallenge () returns (PointsPerChallengeResponse) {
+			option (google.api.http) = {
+                    get: "/v1/challenges/points"
+								};
+		}
+
 }
 
 message DifficultyGetRequest {
@@ -57,5 +64,9 @@ message SubmissionTimestampGetRequest {
 
 message SubmissionTimestampPostRequest {
 string challengeId = 1;
+}
+
+message PointsPerChallengeResponse {
+	repeated educode.protobuf.PointsPerChallenge = 1;
 }
 

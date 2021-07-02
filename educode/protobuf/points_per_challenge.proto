@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package educode.protobuf;
+
+option java_package = "de.hhu.educode.protobuf";
+option java_multiple_files = true;
+
+message PointsPerChallenge {
+    string challengeId = 1;
+    int32 points = 2;
+}
