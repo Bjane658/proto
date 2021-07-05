@@ -11,5 +11,5 @@ message SubmissionCount {
 	string end_date = 2;
 	int32 week = 3;
 	int32 subimssion_count = 4;
-	repeated educode.protobuf.submissionsPerDay days = 5;
+	repeated educode.protobuf.SubmissionsPerDay days = 5;
 }
