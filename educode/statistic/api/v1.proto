@@ -6,6 +6,7 @@ import "google/api/annotations.proto";
 import "educode/protobuf/difficulty.proto";
 import "educode/protobuf/submission_timestamp.proto";
 import "educode/protobuf/points_per_challenge.proto";
+import "educode/protobuf/submission_count.proto";
 import "google/protobuf/empty.proto";
 
 option java_package = "de.hhu.educode.statistic.api";
@@ -45,6 +46,17 @@ service StatisticService {
                     get: "/v1/challenges/points"
 								};
 		}
+
+		rpc getSubmissionCount (google.protobuf.Empty) returns (SubmissionCountResponse) {
+			option (google.api.http) = {
+                    get: "/v1/submissions/count"
+								};
+		}
+
+}
+
+message SubmissionCountResponse {
+	repeated educode.protobuf.SubmissionCount count = 1;
 
 }
 

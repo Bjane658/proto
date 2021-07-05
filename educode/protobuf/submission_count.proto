@@ -1,0 +1,15 @@
+syntax = "proto3";
+package educode.protobuf;
+
+import "educode/protobuf/submissions_per_day.proto";
+
+option java_package = "de.hhu.educode.protobuf";
+option java_multiple_files = true;
+
+message SubmissionCount {
+	string start_date 1;
+	string end_date 2;
+	int32 week 3;
+	int32 subimssion_count 4;
+	repeated educode.protobuf.submissionsPerDay days 5;
+}
