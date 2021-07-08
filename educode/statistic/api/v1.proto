@@ -90,6 +90,6 @@ message PointsPerChallengeResponse {
 	repeated educode.protobuf.PointsPerChallenge points = 1;
 }
 
-message PointsPerChallengeResponse {
+message AverageChallengePointsResponse {
 	repeated educode.protobuf.AverageChallengePoints challenges = 1;
 }
