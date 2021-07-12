@@ -110,5 +110,5 @@ message AverageChallengePointsResponse {
 }
 
 message SubmissionsPerHourResponse {
-	repeated educode.protobuf.SubmissionsPerHour challenges = 1;
+	repeated educode.protobuf.SubmissionsPerHour hours = 1;
 }
