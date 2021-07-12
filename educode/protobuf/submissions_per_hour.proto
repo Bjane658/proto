@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package educode.protobuf;
+
+option java_package = "de.hhu.educode.protobuf";
+option java_multiple_files = true;
+
+message SubmissionsPerHour {
+	int32 hourOfDay = 1;
+	int32 count = 2;
+	int32 percentage = 3;
+}
