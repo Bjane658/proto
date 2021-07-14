@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package educode.protobuf;
+
+option java_package = "de.hhu.educode.protobuf";
+option java_multiple_files = true;
+
+message SubmissionHighscoreEntry {
+	string challengeId = 1;
+	string user = 2;
+	int32 points = 3;
+	int32 pointsPercent = 4;
+}
