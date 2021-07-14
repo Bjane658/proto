@@ -10,7 +10,7 @@ import "educode/protobuf/submission_count.proto";
 import "educode/protobuf/average_challenge_points.proto";
 import "educode/protobuf/challenge_categories.proto";
 import "educode/protobuf/submissions_per_hour.proto";
-import "educode/protobuf/submissions_highscore_entry.proto";
+import "educode/protobuf/submission_highscore_entry.proto";
 import "google/protobuf/empty.proto";
 
 option java_package = "de.hhu.educode.statistic.api";
