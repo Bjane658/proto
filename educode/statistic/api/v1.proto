@@ -51,7 +51,7 @@ service StatisticService {
 								};
 		}
 
-		rpc getSubmissionCount (google.protobuf.Empty) returns (SubmissionCountResponse) {
+		rpc getSubmissionCount (Filter) returns (SubmissionCountResponse) {
 			option (google.api.http) = {
                     get: "/v1/submissions/count"
 								};
@@ -59,7 +59,7 @@ service StatisticService {
 
 		rpc getSubmissionsPerHour (google.protobuf.Empty) returns (SubmissionsPerHourResponse) {
 			option (google.api.http) = {
-                    get: "/v1/submissions/count/hour"
+                    get: "/v1/submissions/counthour"
 								};
 		}
 
@@ -82,6 +82,12 @@ service StatisticService {
                 };
 		}
 
+}
+
+message Filter {
+	string fromDate = 1;
+	string toDate = 2;
+	repeated string categories = 3;
 }
 
 message SubmissionCountResponse {
