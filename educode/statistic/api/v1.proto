@@ -63,7 +63,7 @@ service StatisticService {
 								};
 		}
 
-		rpc getAverageChallengePoints (google.protobuf.Empty) returns (AverageChallengePointsResponse) {
+		rpc getAverageChallengePoints (Filter) returns (AverageChallengePointsResponse) {
 			option (google.api.http) = {
                     get: "/v1/challenge/points/average"
 								};
