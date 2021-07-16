@@ -69,7 +69,7 @@ service StatisticService {
 								};
 		}
 
-		rpc getSubmissionHighscore (google.protobuf.Empty) returns (SubmissionHighscoreResponse) {
+		rpc getSubmissionHighscore (Filter) returns (SubmissionHighscoreResponse) {
 			option (google.api.http) = {
                     get: "/v1/submissions/highscore"
 								};
