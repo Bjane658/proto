@@ -45,7 +45,7 @@ service StatisticService {
                 };
 		}
 
-		rpc getPointsPerChallenge (google.protobuf.Empty) returns (PointsPerChallengeResponse) {
+		rpc getPointsPerChallenge (Filter) returns (PointsPerChallengeResponse) {
 			option (google.api.http) = {
                     get: "/v1/challenges/points"
 								};
