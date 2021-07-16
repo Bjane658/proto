@@ -57,7 +57,7 @@ service StatisticService {
 								};
 		}
 
-		rpc getSubmissionsPerHour (google.protobuf.Empty) returns (SubmissionsPerHourResponse) {
+		rpc getSubmissionsPerHour (Filter) returns (SubmissionsPerHourResponse) {
 			option (google.api.http) = {
                     get: "/v1/submissions/counthour"
 								};
