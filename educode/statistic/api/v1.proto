@@ -82,6 +82,16 @@ service StatisticService {
                 };
 		}
 
+		rpc getChallengeCategories (google.protobuf.Empty) returns (ChallengeCategoriesResponse) {
+			option (google.api.http) = {
+                    get: "/v1/challenges/categories"
+								};
+		}
+
+}
+
+message ChallengeCategoriesResponse {
+	repeated string categories = 1;
 }
 
 message Filter {
