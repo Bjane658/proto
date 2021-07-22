@@ -88,7 +88,7 @@ service StatisticService {
 								};
 		}
 
-		rpc getAverageDifficulties (google.protobuf.Empty) returns (AverageDifficultiesResponse) {
+		rpc getAverageDifficulties (Filter) returns (AverageDifficultiesResponse) {
 			option (google.api.http) = {
                     get: "/v1/difficulty/average"
 								};
