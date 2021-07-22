@@ -88,6 +88,16 @@ service StatisticService {
 								};
 		}
 
+		rpc getAverageDifficulties (google.protobuf.Empty) returns (AverageDifficultiesResponse) {
+			option (google.api.http) = {
+                    get: "/v1/difficulty/average"
+								};
+		}
+
+}
+
+message AverageDifficultiesResponse {
+	repeated educode.protobuf.Difficulty challenges = 1;
 }
 
 message ChallengeCategoriesResponse {
