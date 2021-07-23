@@ -111,7 +111,7 @@ message ChallengeCategoriesResponse {
 message Filter {
 	string fromDate = 1;
 	string toDate = 2;
-	repeated string categories = 3;
+	string category = 3;
 }
 
 message SubmissionCountResponse {
