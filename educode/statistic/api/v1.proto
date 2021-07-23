@@ -75,7 +75,7 @@ service StatisticService {
 								};
 		}
 
-		rpc postChallengeCategory (educode.protobuf.ChallengeCategories) returns (google.protobuf.Empty) {
+		rpc postChallengeCategories (educode.protobuf.ChallengeCategories) returns (google.protobuf.Empty) {
         option (google.api.http) = {
                     post: "/v1/challenges/categories",
                     body: "*"
