@@ -19,7 +19,7 @@ option java_multiple_files = true;
 
 service StatisticService {
 
-    rpc getDifficulty (DifficultyGetRequest) returns (educode.protobuf.Difficulty) {
+    rpc getDifficulty (ChallengeId) returns (educode.protobuf.Difficulty) {
         option (google.api.http) = {
                     get: "/v1/difficulty"
                 };
@@ -32,13 +32,13 @@ service StatisticService {
                 };
     }
 
-		rpc getSubmissionTimestamp (SubmissionTimestampGetRequest) returns (educode.protobuf.SubmissionTimestamp) {
+		rpc getSubmissionTimestamp (ChallengeId) returns (educode.protobuf.SubmissionTimestamp) {
         option (google.api.http) = {
                     get: "/v1/submissions/timestamp"
                 };
 		}
 
-		rpc postSubmissionTimestamp (SubmissionTimestampPostRequest) returns (educode.protobuf.SubmissionTimestamp) {
+		rpc postSubmissionTimestamp (ChallengeId) returns (educode.protobuf.SubmissionTimestamp) {
         option (google.api.http) = {
                     post: "/v1/submissions/timestamp",
                     body: "*"
@@ -96,6 +96,10 @@ service StatisticService {
 
 }
 
+message ChallengeId {
+	string challengeId = 1;
+}
+
 message AverageDifficultiesResponse {
 	repeated educode.protobuf.Difficulty challenges = 1;
 }
@@ -115,21 +119,9 @@ message SubmissionCountResponse {
 
 }
 
-message DifficultyGetRequest {
-    string challengeId = 1;
-}
-
 message DifficultyPostRequest {
     string challengeId = 1;
     string difficulty = 2;
-}
-
-message SubmissionTimestampGetRequest {
-		string challengeId = 1;
-}
-
-message SubmissionTimestampPostRequest {
-string challengeId = 1;
 }
 
 message PointsPerChallengeResponse {
